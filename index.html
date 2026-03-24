@@ -57,7 +57,7 @@
         .hero-tag { font-size: 13px; font-weight: 600; color: var(--text-gray); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; }
         .hero h1 { font-size: 52px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 24px; color: #111;}
         
-        /* 🔥 修改重点：将间距从 72px 提升至 120px，创造极致呼吸感 */
+        /* 🔥 间距控制 */
         .hero p { font-size: 20px; color: var(--text-gray); line-height: 1.5; max-width: 680px; margin: 0 auto 120px;}
         
         /* 按钮系统 */
@@ -319,6 +319,13 @@
     </footer>
 
     <script>
+        // 强制每次刷新都回到顶部
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+
+        // 原有的滚动监听原生 JS 脚本
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
                 root: null,
