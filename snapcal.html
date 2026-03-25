@@ -29,7 +29,6 @@
             overflow-x: hidden;
         }
 
-        /* 滚动渐显动效 */
         .reveal {
             opacity: 0; transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
@@ -37,7 +36,6 @@
         }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* 顶部导航 */
         nav {
             position: fixed; top: 0; width: 100%; height: 54px;
             background: var(--nav-bg); backdrop-filter: saturate(180%) blur(20px);
@@ -49,12 +47,10 @@
         .nav-brand { font-size: 14px; font-weight: 500; color: var(--text-dark); text-decoration: none; display: flex; align-items: center;}
         .nav-brand::before { content: "‹"; font-size: 20px; color: var(--text-gray); margin-right: 8px; margin-bottom: 2px;}
 
-        /* Hero 标题区 */
         .hero { padding: 140px 20px 80px; text-align: center; max-width: 860px; margin: 0 auto; }
         .hero h1 { font-size: 46px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 24px; color: #111;}
         .hero p { font-size: 20px; color: var(--text-gray); line-height: 1.5; max-width: 680px; margin: 0 auto;}
 
-        /* 项目概览 Meta */
         .meta-grid { 
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; 
             max-width: 980px; margin: 0 auto 60px; padding: 32px 40px; 
@@ -65,14 +61,18 @@
         .meta-item .label { font-size: 13px; color: var(--text-gray); margin-bottom: 6px; font-weight: 500;}
         .meta-item .value { font-size: 15px; font-weight: 600; color: var(--text-dark);}
 
-        /* 内容区块与图文左右穿插排版 */
         .article-section { max-width: 1080px; margin: 0 auto; padding: 60px 24px; }
+        
+        /* 提取出胶囊背景的 CSS 类，以便适配手机 */
+        .bg-capsule {
+            background: var(--bg-gray); border-radius: 40px; margin: 40px auto; padding: 80px 40px; max-width: 1140px;
+        }
+
         .content-block { display: flex; gap: 60px; align-items: center; }
         .content-block.reverse { flex-direction: row-reverse; }
         .text-side { flex: 1.1; }
         .image-side { flex: 0.9; display: flex; justify-content: center; }
 
-        /* 标题与文字样式 */
         .section-header { text-align: left; margin-bottom: 20px; }
         .section-header .tag { font-size: 13px; font-weight: 600; color: var(--link-blue); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.05em; }
         .section-header h2 { font-size: 30px; font-weight: 600; margin-bottom: 16px; letter-spacing: -0.01em; color: #111;}
@@ -80,7 +80,6 @@
         .text-side p { font-size: 16px; color: var(--text-dark); line-height: 1.7; margin-bottom: 16px; }
         .text-side p strong { color: #111; font-weight: 600; }
 
-        /* PM 思考卡片 (柔和白底 + 轻微阴影) */
         .pm-card { 
             background: #ffffff; padding: 20px 24px; border-radius: 16px; margin: 20px 0; 
             border: 1px solid var(--border-soft); box-shadow: 0 8px 20px rgba(0,0,0,0.02);
@@ -91,12 +90,11 @@
         .pm-card li { position: relative; padding-left: 16px; margin-bottom: 8px; font-size: 14px; color: #444; line-height: 1.6;}
         .pm-card li::before { content: "•"; position: absolute; left: 0; color: var(--text-gray); font-weight: bold; }
 
-        /* 具体工作细节 (灰底模块) */
         .pm-actions {
-            background: var(--accent-soft);
-            border-radius: 16px;
-            padding: 20px 24px;
-            margin-top: 24px;
+            background: var(--accent-soft); border-radius: 16px; padding: 20px 24px; margin-top: 24px;
+        }
+        .pm-actions-white {
+            background: #ffffff; border: 1px solid var(--border-soft);
         }
         .pm-actions h4 { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #111; display: flex; align-items: center;}
         .pm-actions h4::before { content: ""; display: inline-block; width: 4px; height: 14px; background: var(--link-blue); border-radius: 2px; margin-right: 8px; }
@@ -104,29 +102,42 @@
         .pm-actions li { position: relative; padding-left: 16px; margin-bottom: 8px; font-size: 14px; color: #555; line-height: 1.6; }
         .pm-actions li::before { content: "-"; position: absolute; left: 0; color: var(--text-gray); font-weight: bold; }
 
-        /* 极致柔和的图片占位符 */
         .diagram-placeholder {
             width: 100%; border-radius: 24px; padding: 24px;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             background: var(--bg-gray); 
             border: 1px solid rgba(0,0,0,0.03); 
             box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
-            text-align: center;
-            aspect-ratio: 4 / 3; /* 保证高度一致，视觉统一 */
-            overflow: hidden;
+            text-align: center; aspect-ratio: 4 / 3; overflow: hidden;
+        }
+        .diagram-white {
+            background: #ffffff;
         }
         .diagram-guide { font-size: 13px; color: var(--text-gray); width: 100%; }
         .diagram-guide strong { display: block; margin-bottom: 8px; color: #333; }
 
         footer { padding: 60px 20px; text-align: center; font-size: 13px; color: var(--text-gray); margin-top: 40px;}
 
+        /* 🔥 移动端专属适配 🔥 */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 17px; }
-            .meta-grid { grid-template-columns: 1fr; padding: 24px; gap: 16px; border-radius: 16px;}
+            .hero { padding: 120px 20px 60px; }
+            .hero h1 { font-size: 32px; margin-bottom: 16px;}
+            .hero p { font-size: 16px; }
+            
+            /* 属性网格变单列 */
+            .meta-grid { grid-template-columns: 1fr; padding: 24px; gap: 16px; margin-bottom: 40px; border-radius: 16px;}
+            
+            /* 左右结构变成上下结构 */
             .content-block { flex-direction: column; gap: 32px; }
             .content-block.reverse { flex-direction: column; }
-            .diagram-placeholder { aspect-ratio: auto; min-height: 240px; }
+            
+            /* 手机端适当缩小胶囊的边距和圆角 */
+            .bg-capsule { border-radius: 24px; margin: 20px auto; padding: 40px 20px; }
+            .article-section { padding: 40px 20px; }
+            
+            .section-header h2 { font-size: 26px; }
+            .diagram-placeholder { aspect-ratio: auto; min-height: 200px; padding: 16px; border-radius: 16px; }
+            .pm-card, .pm-actions { padding: 20px; }
         }
     </style>
 </head>
@@ -187,7 +198,7 @@
         </div>
     </section>
 
-    <section class="article-section reveal" style="background: var(--bg-gray); border-radius: 40px; margin: 40px auto; padding: 80px 40px; max-width: 1140px;">
+    <section class="article-section bg-capsule reveal">
         <div class="content-block reverse">
             <div class="text-side">
                 <div class="section-header">
@@ -201,7 +212,7 @@
                     <p>面对 VLM 的输出不确定性，我设计了严格的 Fallback 路径：<strong>标准 JSON 解析 -> 正则字符串清洗 (抹平标点错误) -> 暴力正则提取 (抠出热量数字) -> 人在回路纠错重算。</strong>这保证了核心记账流在 API 崩溃时的 100% 畅通。</p>
                 </div>
 
-                <div class="pm-actions" style="background: #ffffff; border: 1px solid var(--border-soft);">
+                <div class="pm-actions pm-actions-white">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
                         <li>撰写包含复杂场景用例（标准自炊、外卖截图、非食物拦截）的特殊 AI-PRD。</li>
@@ -210,7 +221,7 @@
                 </div>
             </div>
             <div class="image-side">
-                <div class="diagram-placeholder" style="background: #ffffff;">
+                <div class="diagram-placeholder diagram-white">
                     <div class="diagram-guide">
                         <strong>🖼️ 制图指引 [逻辑图]</strong>
                         画一张白底的 Fallback 容错逻辑图：<br>
@@ -250,7 +261,7 @@
         </div>
     </section>
 
-    <section class="article-section reveal" style="background: var(--bg-gray); border-radius: 40px; margin: 40px auto; padding: 80px 40px; max-width: 1140px;">
+    <section class="article-section bg-capsule reveal">
         <div class="content-block reverse">
             <div class="text-side">
                 <div class="section-header">
@@ -268,7 +279,7 @@
                     </ul>
                 </div>
 
-                <div class="pm-actions" style="background: #ffffff; border: 1px solid var(--border-soft);">
+                <div class="pm-actions pm-actions-white">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
                         <li>使用 Figma 绘制全套线框图，精简无关表单。</li>
@@ -277,7 +288,7 @@
                 </div>
             </div>
             <div class="image-side">
-                <div class="diagram-placeholder" style="background: #ffffff;">
+                <div class="diagram-placeholder diagram-white">
                     <div class="diagram-guide">
                         <strong>🖼️ 制图指引 [原型标注图]</strong>
                         放入线框图，用蓝色的指示线引出“巨型按钮”、“热量三环”、“快捷直录”这三个核心决策点。
@@ -292,7 +303,6 @@
     </footer>
 
     <script>
-        // 强制每次刷新都回到顶部
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
