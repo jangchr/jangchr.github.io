@@ -57,7 +57,7 @@
         .hero-tag { font-size: 13px; font-weight: 600; color: var(--text-gray); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; }
         .hero h1 { font-size: 52px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 24px; color: #111;}
         
-        /* 🔥 间距控制 */
+        /* 间距控制 */
         .hero p { font-size: 20px; color: var(--text-gray); line-height: 1.5; max-width: 680px; margin: 0 auto 120px;}
         
         /* 按钮系统 */
@@ -82,7 +82,8 @@
         
         .project-role { font-size: 13px; font-weight: 600; color: var(--link-blue); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em;}
         
-        .project-title { font-size: 36px; font-weight: 600; margin-bottom: 32px; color: #111; letter-spacing: -0.01em;}
+        /* 标题间距控制 */
+        .project-title { font-size: 36px; font-weight: 600; margin-bottom: 18px; color: #111; letter-spacing: -0.01em;}
         
         .project-desc { font-size: 18px; color: var(--text-dark); margin-bottom: 32px; line-height: 1.6;}
         
@@ -221,8 +222,8 @@
                 <a href="aifab.html" class="learn-more">探索背后的运筹推演</a>
             </div>
 
-            <div class="mockup-img reveal" style="transition-delay: 0.1s;">
-                [ 建议：放入算法逻辑或渲染效果图拼接 ]
+            <div class="mockup-img reveal" style="transition-delay: 0.1s; padding: 0; border: none;">
+                <img src="aifab.gif" alt="AI半导体生成演示" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
             </div>
 
             <div class="grid-3 reveal" style="transition-delay: 0.2s;">
@@ -325,7 +326,6 @@
         }
         window.scrollTo(0, 0);
 
-        // 原有的滚动监听原生 JS 脚本
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
                 root: null,
