@@ -141,21 +141,44 @@
 
         /* 🔥 移动端专属适配 🔥 */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 38px; }
+            /* 1. 强制八个字在一行，并使用 clamp 动态自适应屏幕大小 */
+            .hero h1 { 
+                font-size: clamp(24px, 8.5vw, 38px); 
+                white-space: nowrap; 
+            }
             
-            /* 新增：专门针对手机端的 h2 缩小字号和行高，取消过粗的黑体 */
             .hero h2 { font-size: 15px; line-height: 1.5; font-weight: 500; margin-bottom: 8px; }
-            
             .hero p { font-size: 17px; margin-bottom: 60px; }
             .section-full-gray, .section-full-white { padding: 60px 0; }
             .project-title { font-size: 32px; }
             .grid-3 { grid-template-columns: 1fr; gap: 24px; }
-            .mockup-img { aspect-ratio: auto; min-height: 200px; }
+            
+            /* 2. 移除固定 min-height 和多余背景边框，让图片高度自然贴合 */
+            .mockup-img { 
+                aspect-ratio: auto; 
+                min-height: auto; 
+                background: transparent !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+            }
+            .mockup-img img {
+                height: auto !important;
+            }
+
             .resume-card { flex-direction: column; text-align: center; gap: 24px; padding: 40px 24px;}
             .btn-group { flex-direction: column; width: 100%; max-width: 300px;}
             .btn-primary, .btn-secondary { width: 100%; text-align: center;}
             .resume-item-header { flex-direction: column; gap: 4px; }
             .awards-grid { grid-template-columns: 1fr; }
+
+            /* 3. 手机端底部联系方式改为垂直排列，并去除竖线 */
+            .contact-info { 
+                flex-direction: column; 
+                gap: 12px; 
+            }
+            .contact-info span::after { 
+                display: none; 
+            }
         }
     </style>
 </head>
