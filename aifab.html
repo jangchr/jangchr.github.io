@@ -70,21 +70,22 @@
         .content-block { display: flex; gap: 60px; align-items: center; }
         .content-block.reverse { flex-direction: row-reverse; }
         
-        /* 新增：上下排布结构 (用于展现超大图) */
+        /* ==========================================
+           关键修改：上下大图排版的对齐逻辑
+           ========================================== */
         .content-block.vertical {
             flex-direction: column;
             align-items: center;
-            gap: 48px;
+            gap: 40px;
         }
-        .content-block.vertical .text-side {
-            flex: none;
-            width: 100%;
-            max-width: 900px; /* 限制文本最大宽度，保证阅读舒适性 */
-            margin: 0 auto;
-        }
+        
+        /* 强行绑定文本和图片的最大宽度，让左右边缘100%对齐 */
+        .content-block.vertical .text-side,
         .content-block.vertical .image-side {
             flex: none;
             width: 100%;
+            max-width: 960px; /* 这个宽度刚好兼顾了阅读体验和大图的视觉冲击力 */
+            margin: 0 auto;
         }
 
         /* 调整桌面端比例，让左右结构时图片显示更大 */
