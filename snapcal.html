@@ -43,17 +43,19 @@
             display: flex; justify-content: center; align-items: center;
             z-index: 1000; box-shadow: 0 1px 0 var(--border-soft);
         }
-        .nav-content { width: 100%; max-width: 980px; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; }
+        
+        /* 强制全局 960px 网格线 */
+        .nav-content { width: 100%; max-width: 960px; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; }
         .nav-brand { font-size: 14px; font-weight: 500; color: var(--text-dark); text-decoration: none; display: flex; align-items: center;}
         .nav-brand::before { content: "‹"; font-size: 20px; color: var(--text-gray); margin-right: 8px; margin-bottom: 2px;}
 
-        .hero { padding: 140px 20px 80px; text-align: center; max-width: 860px; margin: 0 auto; }
+        .hero { padding: 140px 20px 80px; text-align: center; max-width: 960px; margin: 0 auto; }
         .hero h1 { font-size: 46px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 24px; color: #111;}
         .hero p { font-size: 20px; color: var(--text-gray); line-height: 1.5; max-width: 680px; margin: 0 auto;}
 
         .meta-grid { 
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; 
-            max-width: 980px; margin: 0 auto 60px; padding: 32px 40px; 
+            max-width: 960px; margin: 0 auto 60px; padding: 32px 40px; 
             background: #ffffff; border-radius: 24px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.03); border: 1px solid var(--border-soft);
             text-align: left;
@@ -61,19 +63,30 @@
         .meta-item .label { font-size: 13px; color: var(--text-gray); margin-bottom: 6px; font-weight: 500;}
         .meta-item .value { font-size: 15px; font-weight: 600; color: var(--text-dark);}
 
-        .article-section { max-width: 1080px; margin: 0 auto; padding: 60px 24px; }
+        /* ==========================================
+           关键修改：彻底干掉胶囊灰框，改为全屏通栏背景
+           保证内部所有的 960px 内容完美对齐
+           ========================================== */
+        .article-section { 
+            width: 100%; 
+            padding: 100px 24px; /* 增加上下留白，让大图更有呼吸感 */
+        }
         
-        .bg-capsule {
-            background: var(--bg-gray); border-radius: 40px; margin: 40px auto; padding: 80px 40px; max-width: 1140px;
+        .bg-gray-section {
+            background-color: var(--bg-gray);
         }
 
-        /* 保留基础排版类，以备不时之需 */
-        .content-block { display: flex; gap: 60px; align-items: center; }
+        /* 强制统一内容宽度并水平居中 */
+        .content-block { 
+            display: flex; 
+            gap: 40px; 
+            align-items: center; 
+            max-width: 960px; 
+            margin: 0 auto;   
+            width: 100%;
+        }
         .content-block.reverse { flex-direction: row-reverse; }
 
-        /* ==========================================
-           关键修改：上下大图排版的对齐逻辑
-           ========================================== */
         .content-block.vertical {
             flex-direction: column;
             align-items: center;
@@ -85,8 +98,6 @@
         .content-block.vertical .image-side {
             flex: none;
             width: 100%;
-            max-width: 960px; /* 和 AIFAB 保持一致的宽度，兼顾阅读体验和大图冲击力 */
-            margin: 0 auto;
         }
 
         .section-header { text-align: left; margin-bottom: 20px; }
@@ -141,8 +152,7 @@
             /* 手机端统一为上下结构，并缩小间距 */
             .content-block, .content-block.reverse, .content-block.vertical { flex-direction: column; gap: 32px; }
             
-            .bg-capsule { border-radius: 24px; margin: 20px auto; padding: 40px 20px; }
-            .article-section { padding: 40px 20px; }
+            .article-section { padding: 60px 20px; }
             
             .section-header h2 { font-size: 26px; }
             .pm-card, .pm-actions { padding: 20px; }
@@ -203,7 +213,7 @@
         </div>
     </section>
 
-    <section class="article-section bg-capsule reveal">
+    <section class="article-section bg-gray-section reveal">
         <div class="content-block vertical">
             <div class="text-side">
                 <div class="section-header">
@@ -255,7 +265,7 @@
         </div>
     </section>
 
-    <section class="article-section bg-capsule reveal">
+    <section class="article-section bg-gray-section reveal">
         <div class="content-block vertical">
             <div class="text-side">
                 <div class="section-header">
