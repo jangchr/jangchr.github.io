@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>知食分子 - 独立全栈产品 | 张驰</title>
     <style>
-        /* Apple-inspired Soft & Clean Design System */
         :root {
             --nav-bg: rgba(255, 255, 255, 0.85);
             --text-dark: #1d1d1f;
@@ -29,21 +28,10 @@
             overflow-x: hidden;
         }
 
-        .reveal {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        nav {
-            position: fixed; top: 0; width: 100%; height: 54px;
-            background: var(--nav-bg); backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-            display: flex; justify-content: center; align-items: center;
-            z-index: 1000; box-shadow: 0 1px 0 var(--border-soft);
-        }
-        
+        nav { position: fixed; top: 0; width: 100%; height: 54px; background: var(--nav-bg); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); display: flex; justify-content: center; align-items: center; z-index: 1000; box-shadow: 0 1px 0 var(--border-soft); }
         .nav-content { width: 100%; max-width: 960px; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; }
         .nav-brand { font-size: 14px; font-weight: 500; color: var(--text-dark); text-decoration: none; display: flex; align-items: center;}
         .nav-brand::before { content: "‹"; font-size: 20px; color: var(--text-gray); margin-right: 8px; margin-bottom: 2px;}
@@ -52,46 +40,17 @@
         .hero h1 { font-size: 46px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 24px; color: #111;}
         .hero p { font-size: 20px; color: var(--text-gray); line-height: 1.5; max-width: 680px; margin: 0 auto;}
 
-        .meta-grid { 
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; 
-            max-width: 960px; margin: 0 auto 60px; padding: 32px 40px; 
-            background: #ffffff; border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03); border: 1px solid var(--border-soft);
-            text-align: left;
-        }
+        .meta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 960px; margin: 0 auto 60px; padding: 32px 40px; background: #ffffff; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.03); border: 1px solid var(--border-soft); text-align: left; }
         .meta-item .label { font-size: 13px; color: var(--text-gray); margin-bottom: 6px; font-weight: 500;}
         .meta-item .value { font-size: 15px; font-weight: 600; color: var(--text-dark);}
 
-        .article-section { 
-            width: 100%; 
-            padding: 100px 24px; 
-        }
-        
-        .bg-gray-section {
-            background-color: var(--bg-gray);
-        }
+        .article-section { width: 100%; padding: 100px 24px; }
+        .bg-gray-section { background-color: var(--bg-gray); }
 
-        .content-block { 
-            display: flex; 
-            gap: 40px; 
-            align-items: center; 
-            max-width: 960px; 
-            margin: 0 auto;   
-            width: 100%;
-        }
+        .content-block { display: flex; gap: 40px; align-items: center; max-width: 960px; margin: 0 auto; width: 100%; }
         .content-block.reverse { flex-direction: row-reverse; }
-
-        .content-block.vertical {
-            flex-direction: column;
-            align-items: center;
-            gap: 40px;
-        }
-        
-        .content-block.vertical .text-side,
-        .content-block.vertical .image-side {
-            flex: none;
-            width: 100%;
-        }
+        .content-block.vertical { flex-direction: column; align-items: center; gap: 40px; }
+        .content-block.vertical .text-side, .content-block.vertical .image-side { flex: none; width: 100%; }
 
         .section-header { text-align: left; margin-bottom: 20px; }
         .section-header .tag { font-size: 13px; font-weight: 600; color: var(--link-blue); text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.05em; }
@@ -100,80 +59,29 @@
         .text-side p { font-size: 16px; color: var(--text-dark); line-height: 1.7; margin-bottom: 16px; }
         .text-side p strong { color: #111; font-weight: 600; }
 
-        .pm-card { 
-            background: #ffffff; padding: 20px 24px; border-radius: 16px; margin: 20px 0; 
-            border: 1px solid var(--border-soft); box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-        }
+        .pm-card { background: #ffffff; padding: 20px 24px; border-radius: 16px; margin: 20px 0; border: 1px solid var(--border-soft); box-shadow: 0 8px 20px rgba(0,0,0,0.02); }
         .pm-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 12px; color: var(--link-blue); }
         .pm-card p { font-size: 14px; color: #444; margin-bottom: 8px; line-height: 1.6; }
         .pm-card ul { list-style: none; margin-left: 0; }
         .pm-card li { position: relative; padding-left: 16px; margin-bottom: 8px; font-size: 14px; color: #444; line-height: 1.6;}
         .pm-card li::before { content: "•"; position: absolute; left: 0; color: var(--text-gray); font-weight: bold; }
 
-        .pm-actions {
-            background: var(--accent-soft); border-radius: 16px; padding: 20px 24px; margin-top: 24px;
-        }
-        .pm-actions-white {
-            background: #ffffff; border: 1px solid var(--border-soft);
-        }
+        .pm-actions { background: var(--accent-soft); border-radius: 16px; padding: 20px 24px; margin-top: 24px; }
+        .pm-actions-white { background: #ffffff; border: 1px solid var(--border-soft); }
         .pm-actions h4 { font-size: 14px; font-weight: 600; margin-bottom: 12px; color: #111; display: flex; align-items: center;}
         .pm-actions h4::before { content: ""; display: inline-block; width: 4px; height: 14px; background: var(--link-blue); border-radius: 2px; margin-right: 8px; }
         .pm-actions ul { list-style: none; }
         .pm-actions li { position: relative; padding-left: 16px; margin-bottom: 8px; font-size: 14px; color: #555; line-height: 1.6; }
         .pm-actions li::before { content: "-"; position: absolute; left: 0; color: var(--text-gray); font-weight: bold; }
 
-        .content-image {
-            width: 100%;
-            height: auto;
-            border-radius: 24px;
-            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-            border: 1px solid var(--border-soft);
-            display: block;
-        }
+        .content-image { width: 100%; height: auto; border-radius: 24px; box-shadow: 0 12px 32px rgba(0,0,0,0.08); border: 1px solid var(--border-soft); display: block; }
 
-        /* 新增：底部项目导航样式 */
-        .project-nav {
-            max-width: 960px;
-            margin: 80px auto 40px;
-            padding: 0 24px;
-            display: flex;
-            justify-content: space-between;
-            gap: 24px;
-        }
-        .project-nav a {
-            flex: 1;
-            padding: 32px;
-            background: var(--bg-gray);
-            border-radius: 24px;
-            text-decoration: none;
-            color: var(--text-dark);
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid transparent;
-        }
-        .project-nav a:hover {
-            background: #ffffff;
-            border-color: var(--border-soft);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-            transform: translateY(-2px);
-        }
-        .project-nav .nav-label {
-            font-size: 13px;
-            color: var(--text-gray);
-            margin-bottom: 8px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .project-nav .nav-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--link-blue);
-        }
-        .project-nav .next-project {
-            text-align: right;
-        }
+        .project-nav { max-width: 960px; margin: 80px auto 40px; padding: 0 24px; display: flex; justify-content: space-between; gap: 24px; }
+        .project-nav a { flex: 1; padding: 32px; background: var(--bg-gray); border-radius: 24px; text-decoration: none; color: var(--text-dark); transition: all 0.3s ease; display: flex; flex-direction: column; border: 1px solid transparent; }
+        .project-nav a:hover { background: #ffffff; border-color: var(--border-soft); box-shadow: 0 12px 30px rgba(0,0,0,0.05); transform: translateY(-2px); }
+        .project-nav .nav-label { font-size: 13px; color: var(--text-gray); margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+        .project-nav .nav-title { font-size: 20px; font-weight: 600; color: var(--link-blue); }
+        .project-nav .next-project { text-align: right; }
 
         footer { padding: 40px 20px; text-align: center; font-size: 13px; color: var(--text-gray);}
 
@@ -182,22 +90,16 @@
             .hero { padding: 120px 20px 60px; }
             .hero h1 { font-size: 32px; margin-bottom: 16px;}
             .hero p { font-size: 16px; }
-            
             .meta-grid { grid-template-columns: 1fr; padding: 24px; gap: 16px; margin-bottom: 40px; border-radius: 16px;}
-            
             .content-block, .content-block.reverse, .content-block.vertical { flex-direction: column; gap: 32px; }
-            
             .article-section { padding: 60px 20px; }
-            
             .section-header h2 { font-size: 26px; }
             .pm-card, .pm-actions { padding: 20px; }
-            
             .content-image { border-radius: 16px; }
-
-            /* 移动端导航改为上下排列 */
+            
+            /* 手机端导航适配：强制文本靠左，覆盖所有行内样式 */
             .project-nav { flex-direction: column; margin-top: 40px; padding: 0 20px; gap: 16px;}
-            .project-nav a { padding: 24px; border-radius: 16px; }
-            .project-nav .next-project { text-align: left; }
+            .project-nav a { padding: 24px; border-radius: 16px; text-align: left !important; }
         }
     </style>
 </head>
@@ -338,13 +240,17 @@
     </section>
 
     <div class="project-nav reveal">
-        <a href="index.html" class="prev-project">
+        <a href="index.html">
             <span class="nav-label">返回</span>
             <span class="nav-title">主页 / 作品集</span>
         </a>
-        <a href="aifab.html" class="next-project">
-            <span class="nav-label">查看另一个项目</span>
-            <span class="nav-title">AI+半导体厂房设计</span>
+        <a href="aifab.html" style="text-align: center;">
+            <span class="nav-label">项目案例 2</span>
+            <span class="nav-title">AI+半导体设计</span>
+        </a>
+        <a href="autodca.html" class="next-project">
+            <span class="nav-label">项目案例 3</span>
+            <span class="nav-title">AutoDCA定投</span>
         </a>
     </div>
 
@@ -353,20 +259,12 @@
     </footer>
 
     <script>
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
         window.scrollTo(0, 0);
-
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
+                entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); observer.unobserve(entry.target); } });
             }, observerOptions);
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
