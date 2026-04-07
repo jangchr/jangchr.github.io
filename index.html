@@ -283,10 +283,10 @@
     <section class="section-full-gray">
         <div class="project-content">
             <div class="project-header reveal">
-                <div class="project-role">产品架构与业务流开发 / 2026.04</div>
-                <h2 class="project-title">AutoDCA 量化定投系统</h2>
-                <p class="project-desc">针对传统金融软件“持仓成本失真”的痛点，利用 n8n 独立架构的一套脱机全量化定投流水线。实现从跨国数据抓取到战报推送的完整逻辑闭环。</p>
-                <a href="autodca.html" class="learn-more">探索无代码业务流重构逻辑</a>
+                <div class="project-role">AI 产品架构与全栈开发 / 2026.04</div>
+                <h2 class="project-title">AutoDCA 智能量化定投系统</h2>
+                <p class="project-desc">针对传统金融软件“持仓成本失真”的痛点，利用 n8n 与智谱 AI 大模型独立架构的 Serverless 智能定投流水线。实现从跨源数据融合、大模型清洗到多端战报推送的完整商业闭环。</p>
+                <a href="autodca.html" class="learn-more">探索大模型赋能与 Serverless 架构逻辑</a>
             </div>
 
             <div class="mockup-img reveal" style="transition-delay: 0.1s; padding: 0; border: none;">
@@ -295,16 +295,16 @@
 
             <div class="grid-3 reveal" style="transition-delay: 0.2s;">
                 <div class="grid-item">
-                    <h4>业务流程与架构容错</h4>
-                    <p>设计 6 段式容错工作流。通过重构时间轴调度完美规避时区差导致的周末休市冗余扣款，并通过自定义降级函数解决飞书复杂 JSON 嵌套提取。</p>
+                    <h4>跨源融合与 AI 大模型赋能</h4>
+                    <p>打通新浪财经与天天基金 API，创新性接入智谱 AI 大模型 (GLM) 进行异构金融数据的智能清洗与摘要提取。利用 Prompt 工程约束输出标准 JSON，保障下游业务流 100% 畅通。</p>
                 </div>
                 <div class="grid-item">
-                    <h4>核心算法与时序校准</h4>
-                    <p>利用 localeCompare 强制时序校验解决接口乱序痛点。通过强制采用当日最新大盘点位锚定上一交易日净值，打破基金结算滞后，提前获得真实反馈。</p>
+                    <h4>容错工程与时序校准</h4>
+                    <p>设计涵盖“触发-大模型解析-核算”的复杂容错流。手写降级函数抹平结构差异，并利用强制时序校验解决接口乱序，成功打破资产结算滞后，提前 24 小时提供真实大盘反馈。</p>
                 </div>
                 <div class="grid-item">
-                    <h4>高可用云端部署</h4>
-                    <p>将 n8n 环境全量迁移至 Hugging Face Spaces，引入 UptimeRobot 构建 5 分钟级心跳监控对抗容器休眠，实现 24 小时零成本免维护运行。</p>
+                    <h4>Serverless 零成本高可用部署</h4>
+                    <p>将系统全量迁移至 Hugging Face 容器，独立攻克 IPv4/IPv6 跨网桥接、Session Pooler 与 SSL 证书强校验等底层网络难题，实现彻底脱机、免维护的 24h 云端自动化运行。</p>
                 </div>
             </div>
         </div>
