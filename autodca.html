@@ -122,7 +122,7 @@
 
     <header class="hero reveal">
         <h1>AutoDCA 全自动量化定投系统</h1>
-        <p>针对传统金融软件“持仓成本失真”与“情绪干扰”的痛点，我利用 n8n 独立架构了一套脱机的全量化定投流水线。实现了从跨国数据抓取、动态算法核算、到多端战报推送的完整商业逻辑闭环。</p>
+        <p>针对传统金融软件“持仓成本失真”与“情绪干扰”的痛点，我利用 n8n 独立架构了一套脱机的全量化定投流水线。实现了从跨国数据抓取、大模型清洗、动态算法核算、到多端战报推送的完整商业逻辑闭环。</p>
     </header>
 
     <div class="meta-grid reveal">
@@ -132,11 +132,11 @@
         </div>
         <div class="meta-item">
             <div class="label">核心技术选型</div>
-            <div class="value">n8n / 飞书 Base / UptimeRobot</div>
+            <div class="value">n8n / 智谱 AI / Supabase (PostgreSQL) / Hugging Face</div>
         </div>
         <div class="meta-item">
             <div class="label">当前状态</div>
-            <div class="value">实现 24h 零成本云端托管运行</div>
+            <div class="value">Serverless 容器化部署，零成本 24h 高可用</div>
         </div>
     </div>
 
@@ -153,13 +153,13 @@
                 <div class="pm-actions">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li>打通跨源融合数据链路，通过雅虎财经获取实时美股大盘，结合天天基金获取底层净值。</li>
-                        <li>规划以飞书多维表格作为云端数据库，实现时间序列的滚动回溯，摒弃繁杂图表，将高浓度的结果精炼推送。</li>
+                        <li><strong>跨源数据融合与 AI 赋能：</strong>打通新浪财经与天天基金 API，并通过接入<strong>智谱 AI 大模型 (GLM) </strong>进行行情数据的智能清洗与摘要生成。</li>
+                        <li><strong>双轨数据存储：</strong>采用飞书多维表格做前端展示与轻量回溯，底层核心配置接入 Supabase 云端数据库，实现数据的高效流转。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="N8N1.jpg" alt="业务洞察与痛点挖掘" class="content-image">
+                <img src="N8N1.jpg" alt="业务洞察与痛点挖掘：从繁杂K线到极简战报" class="content-image">
             </div>
         </div>
     </section>
@@ -171,23 +171,19 @@
                     <div class="tag">1. 业务流程与架构定义</div>
                     <h2>用“工程兜底思维”应对真实金融环境</h2>
                 </div>
-                <p>搭建 n8n 流水线时，真正的挑战在于应对外部金融数据源的非标准反馈与极端场景。我设计了涵盖触发、抓取、拆包、核算的 6 段式容错工作流。</p>
+                <p>面对外部金融数据源的高频波动与大模型 API 的偶发延迟，我构建了涵盖“触发-抓取-大模型解析-核算-存储-推送”的复杂容错工作流。</p>
                 
-                <div class="pm-card">
-                    <h4>产品决策：异常场景兜底机制 (Fallback Strategy)</h4>
-                    <p>面对飞书 API 深度嵌套且格式不一（文本/数组混合）的 JSON 数据，我手写 JS 降级函数，抹平了底层存储结构差异，保障核算流 100% 畅通。同时针对跨国时区差异做了专门处理。</p>
-                </div>
-
                 <div class="pm-actions pm-actions-white">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li>梳理外部 API 异常边界，设计数据提取的万能解析函数，处理 Null/Array/String 混合态。</li>
+                        <li><strong>数据降级与清洗：</strong>梳理外部 API 异常边界，手写万能解析函数，处理 Null/Array/String 混合态，抹平异构数据的结构差异。</li>
+                        <li><strong>AI 节点工程化：</strong>将大模型 Prompt 结构化，约束 AI 输出标准 JSON 格式，确保上下游节点的 100% 畅通。</li>
                         <li>重构 n8n 调度时间轴，精准匹配中美时差，实现“节假日自动休市”以规避周末冗余扣款。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="N8N2.jpg" alt="异常场景兜底机制" class="content-image">
+                <img src="N8N2.jpg" alt="n8n工作流全景图：涵盖触发、抓取、大模型、核算" class="content-image">
             </div>
         </div>
     </section>
@@ -211,7 +207,7 @@
                 </div>
             </div>
             <div class="image-side">
-                <img src="N8N3.png" alt="核心算法与时序校准" class="content-image">
+                <img src="N8N3.png" alt="核心算法节点代码与数据表呈现" class="content-image">
             </div>
         </div>
     </section>
@@ -220,22 +216,22 @@
         <div class="content-block vertical">
             <div class="text-side">
                 <div class="section-header">
-                    <div class="tag">3. 云端运维与 UX 触达设计</div>
-                    <h2>极低阅读门槛与高可用部署架构</h2>
+                    <div class="tag">3. 云端运维与网络攻坚</div>
+                    <h2>Serverless 部署与零成本高可用架构</h2>
                 </div>
-                <p>作为一套自动化系统，最终的交付界面就是那条每日推送的短消息。我将系统的最终触达形式做到了极简，并在部署层面实现了彻底的“脱机运行”。</p>
+                <p>作为一套自动化系统，最终的交付不应该依赖个人电脑的随时开启。我通过云端容器化技术，实现了系统的彻底脱机运行。</p>
 
                 <div class="pm-card">
-                    <h4>部署与交互策略拆解：</h4>
+                    <h4>容器化部署与底层网络攻坚：</h4>
                     <ul>
-                        <li>免维护云端架构：将 n8n 整体环境迁移部署至 Hugging Face Spaces。</li>
-                        <li>引入 UptimeRobot 构建 5 分钟级心跳监控，对抗免费云容器强制休眠，实现零成本高可用。</li>
-                        <li>高转化信息排版：摒弃复杂的图表推送，通过 Webhook 接口将结果精炼为包含“最新点位、滚动成本、5日走势”的纯文本摘要。</li>
+                        <li><strong>彻底的脱机架构：</strong>将 n8n 整体环境打包迁移至 Hugging Face Spaces 容器环境，摒弃本地机器依赖。</li>
+                        <li><strong>跨网通信协议桥接：</strong>面对 Hugging Face (纯 IPv4) 与 Supabase 数据库 (IPv6) 的网络协议鸿沟，独立攻克了 Session Pooler (连接池代理) 与 SSL 证书强校验难题，解决 Circuit breaker（断路器）跳闸问题，实现底层数据精准握手。</li>
+                        <li><strong>心跳保活机制：</strong>引入 UptimeRobot 构建 5 分钟级 Ping 监控，对抗免费云容器的强制休眠。</li>
                     </ul>
                 </div>
 
                 <div class="pm-actions pm-actions-white">
-                    <h4>执行细节 (What I Did)</h4>
+                    <h4>最终触达 (UX Delivery)</h4>
                     <ul>
                         <li>配置 ServerChan 服务打通个人微信节点，完成 T+0 级战报秒级送达。</li>
                         <li>确立“钝感力”产品调性，每日一条极简推送取代繁杂的金融 App 盯盘焦虑。</li>
@@ -243,7 +239,7 @@
                 </div>
             </div>
             <div class="image-side">
-                <img src="N8N4.jpg" alt="高可用部署架构" class="content-image">
+                <img src="N8N4.jpg" alt="云端容器化部署日志与网络协议代理配置" class="content-image">
             </div>
         </div>
     </section>
