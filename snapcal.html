@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>知食分子 - 独立全栈产品 | 张驰</title>
+    <title>SnapCal 知食分子 - 独立全栈产品 | 张驰</title>
     <style>
         /* Apple-inspired Soft & Clean Design System */
         :root {
@@ -121,14 +121,14 @@
     </nav>
 
     <header class="hero reveal">
-        <h1>知食分子 (SnapCal)</h1>
-        <p>将建筑出身的“工程思维”与大模型技术相结合，我完成了这款产品的全生命周期落地，致力于消除健康管理的执行门槛。</p>
+        <h1>SnapCal (知食分子)</h1>
+        <p>将建筑出身的“工程思维”与大模型技术相结合，主导了这款产品从 0 到 1 的落地，致力于用最低的使用门槛消除健康管理的执行阻力。</p>
     </header>
 
     <div class="meta-grid reveal">
         <div class="meta-item">
             <div class="label">项目职责</div>
-            <div class="value">0-1 产品定义 / 全栈开发 / 算法优化</div>
+            <div class="value">0-1 产品落地 / 需求验证 / 核心架构兜底</div>
         </div>
         <div class="meta-item">
             <div class="label">核心技术选型</div>
@@ -136,7 +136,7 @@
         </div>
         <div class="meta-item">
             <div class="label">当前状态</div>
-            <div class="value">完成全链路逻辑闭环与落地验证</div>
+            <div class="value">完成核心 MVP 验证，跑通商业闭环</div>
         </div>
     </div>
 
@@ -153,13 +153,13 @@
                 <div class="pm-actions">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li>独立完成竞品分析，抽象出“视觉大模型+健康”的最优解法。</li>
-                        <li>规划了健康的商业 ROI 路径：从“基础 AI 识别免费（控制每日 Token 成本）”到“高阶营养师深度报告订阅制 (SaaS)”，再到“健康轻食电商精准分发”。</li>
+                        <li>独立完成竞品分析，抽象出“视觉大模型+健康”的最优产品解法。</li>
+                        <li><strong>设计阶梯化商业变现路径：</strong>以极简 AI 识别作为流量入口，向高阶定制化营养师报告（SaaS 订阅）及精准健康电商分发进行商业转化。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="food1.jpg" alt="对比图" class="content-image">
+                <img src="food1.jpg" alt="传统与AI记账对比流线" class="content-image">
             </div>
         </div>
     </section>
@@ -182,12 +182,12 @@
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
                         <li>撰写包含复杂场景用例（标准自炊、外卖截图、非食物拦截）的特殊 AI-PRD。</li>
-                        <li>建立 100 张涵盖多品类的“标准食物测试集”，在迭代 Prompt 时自动化跑测，严密监控模型幻觉率。</li>
+                        <li><strong>构建基于真实业务场景的 100+ Benchmark 测试集。</strong>在产品迭代中实现 Prompt 效果的量化评估，有效将模型幻觉率控制在业务可接受范围内。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="food2.jpg" alt="逻辑图" class="content-image">
+                <img src="food2.jpg" alt="四级容错兜底漏斗图" class="content-image">
             </div>
         </div>
     </section>
@@ -197,21 +197,21 @@
             <div class="text-side">
                 <div class="section-header">
                     <div class="tag">2. 业务流程与全栈架构设计</div>
-                    <h2>打通“前端-云端-大模型”的数据闭环</h2>
+                    <h2>平衡体验与成本的数据闭环</h2>
                 </div>
-                <p>为了让产品真正落地，我独立完成了整套业务链路的搭建与后端开发（Python FastAPI）。这一部分工作完美展现了我的工程落地能力：如何将产品逻辑转化为代码逻辑，并考虑到隐私、超时等 PM 核心细节。</p>
+                <p>为了让产品真正落地，我主导了整套业务链路的搭建与后端开发。这一部分工作核心展现了在真实资源约束下，如何将产品逻辑转化为稳健的代码逻辑。</p>
 
                 <div class="pm-actions">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li><strong>全栈开发：</strong>独立完成微信小程序前端（压缩图片转 Base64）与 Python 后端的接收、组合 Prompt 与 API 调用。</li>
-                        <li><strong>性能兜底：</strong>在前端强制加入 100KB 图片压缩拦截逻辑，成功避免了原图直接上传导致的大模型接口严重超时。</li>
-                        <li><strong>隐私合规：</strong>在系统层面确保用户上传的真实图片在云端完成脱敏，不用于二次训练。</li>
+                        <li><strong>MVP 敏捷开发：</strong>独立完成微信小程序前端与 Python 后端闭环，跑通核心 API 调用与数据组合逻辑。</li>
+                        <li><strong>平衡体验与成本的 Trade-off：</strong>针对 VLM 极易超时的问题，制定前端 100KB 预压缩拦截策略。在保证大模型识别准确率不降级的前提下，大幅优化了核心业务流的响应速度并有效压降 API 成本。</li>
+                        <li><strong>隐私合规前置：</strong>在系统架构层面确立规范，确保用户上传的真实图片在云端完成脱敏处理，不用于二次训练，规避合规风险。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="food3.jpg" alt="架构时序图" class="content-image">
+                <img src="food3.jpg" alt="带有拦截策略的数据时序图" class="content-image">
             </div>
         </div>
     </section>
@@ -223,27 +223,26 @@
                     <div class="tag">3. 低保真原型与体验设计</div>
                     <h2>认知负荷最低化的输入流线设计</h2>
                 </div>
-                <p>在体验设计阶段，我的目标是让用户的输入口做得<strong>尽可能轻量、无感</strong>。所有的复杂推理都在云端静默完成，前端只提供最直接的情绪价值。</p>
+                <p>在体验设计阶段，我的目标是让用户的输入口做得<strong>尽可能轻量、无感</strong>。所有的复杂推理都在云端静默完成，前端只提供最直接的情绪价值与业务指引。</p>
 
                 <div class="pm-card">
-                    <h4>Figma 原型决策点拆解：</h4>
+                    <h4>体验决策与商业逻辑拆解：</h4>
                     <ul>
-                        <li>首页顶部强目标的<strong>今日热量余额与运动抵扣三环</strong>，提供清晰的正反馈。</li>
-                        <li>首页中部放一个<strong>极具视觉重心的“巨型拍照按钮”</strong>，让核心流线最短化。</li>
-                        <li>底部是拟物化水滴打卡与咖啡、水煮蛋一键快捷直录，走本地纯代码逻辑，<strong>既降低 Token 成本，又平衡了低认知操作体验</strong>。</li>
+                        <li>首页顶部强调<strong>今日热量余额与运动抵扣三环</strong>，提供清晰、即时的正反馈机制，缓解健康焦虑。</li>
+                        <li>绝对视觉重心的<strong>巨型拍照按钮</strong>，强制主导核心流线最短化。</li>
                     </ul>
                 </div>
 
                 <div class="pm-actions pm-actions-white">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li>使用 Figma 绘制全套线框图，精简无关表单。</li>
-                        <li>设计人在回路 (Human-in-the-loop)：允许用户对 AI 的错误进行文字纠错，形成数据优化的正向飞轮。</li>
+                        <li><strong>高频场景的降本增效设计：</strong>剥离“喝水、水煮蛋”等高频标准化输入场景，设计一键本地快捷直录。通过行为分流规避不必要的云端 VLM 调用，在实现无感交互的同时，有效压降系统整体算力消耗。</li>
+                        <li><strong>闭环数据飞轮：</strong>设计人在回路 (Human-in-the-loop) 交互，允许用户对 AI 的错误进行轻量化文字纠错，自然收集 Ground Truth 数据反哺后续模型调优。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="food4.jpg" alt="原型标注图" class="content-image">
+                <img src="food4.jpg" alt="带有商业体验标注的原型图" class="content-image">
             </div>
         </div>
     </section>
