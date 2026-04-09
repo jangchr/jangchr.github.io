@@ -124,21 +124,21 @@
 
     <header class="hero reveal">
         <h1>AI+半导体厂房生成式设计</h1>
-        <p>一款基于运筹优化算法的 B端 SaaS 工具。将建筑设计转化为“多目标优化问题”，把厂房布局产出周期从 3 天压缩至 3 小时。</p>
+        <p>主导这款 B 端辅助决策工具的从 0 到 1。通过运筹优化算法重塑传统厂房设计流线，将交付周期从数天级压缩至小时级，显著赋能一线业务。</p>
     </header>
 
     <div class="meta-grid reveal">
         <div class="meta-item">
             <div class="label">项目职责</div>
-            <div class="value">产品主要负责人 / 算法逻辑搭建</div>
+            <div class="value">产品主要负责人 / 算法底座设计 / 业务流抽象</div>
         </div>
         <div class="meta-item">
             <div class="label">核心技术选型</div>
-            <div class="value">Python / 遗传算法 / 参数化设计 (GH)</div>
+            <div class="value">Python / 遗传算法 (GA) / Stable Diffusion</div>
         </div>
         <div class="meta-item">
             <div class="label">业务价值指标</div>
-            <div class="value">设计效率提升 90% / 运营流线成本最小化</div>
+            <div class="value">设计排期压缩 90% / 运营流线成本最小化</div>
         </div>
     </div>
 
@@ -147,21 +147,21 @@
             <div class="text-side">
                 <div class="section-header">
                     <div class="tag">0. 痛点挖掘与业务抽象</div>
-                    <h2>寻找设计的“北极星指标”</h2>
+                    <h2>寻找 B 端设计的“北极星指标”</h2>
                 </div>
-                <p>在深度调研一线厂房设计师的工作流后，我发现传统的半导体厂房（涵盖冲压、研磨、清洗、包装等车间）规划极度依赖人工经验。不仅周期冗长，且难以在图纸阶段精确量化投产后的物流运输成本。</p>
+                <p>在深度调研一线厂房设计师的工作流后，我发现传统的半导体厂房规划极度依赖人工经验。不仅周期冗长，且难以在图纸阶段精确量化投产后的物流运输成本。</p>
                 <p>作为产品负责人，我将这个感性的工程问题抽象为了理性的数学问题。明确了工具优化的<strong>北极星指标：全生命周期运营效率最高，即“最低流线成本”。</strong></p>
                 
                 <div class="pm-actions">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li>深度调研业务痛点，提炼出“设计效率”与“建厂后物流成本”两大核心矛盾。</li>
-                        <li>将模糊的建筑需求拆解为可供算法计算的结构化输入参数：物理边界（用地红线、安全间距）与逻辑数据（车间关联列表、物流权重）。</li>
+                        <li>深度调研业务痛点，提炼出“前期设计排期”与“后期物流成本”两大核心业务矛盾。</li>
+                        <li><strong>完成复杂业务场景的结构化抽象：</strong>将模糊的建筑需求拆解为系统可读的输入参数：物理边界（用地红线、安全间距）与逻辑数据（车间关联矩阵、物流权重）。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="FAB1.jpg" alt="业务抽象图" class="content-image">
+                <img src="FAB1.jpg" alt="业务抽象与北极星指标推演图" class="content-image">
             </div>
         </div>
     </section>
@@ -171,9 +171,9 @@
             <div class="text-side">
                 <div class="section-header">
                     <div class="tag">1. 核心评估机制设计</div>
-                    <h2>为什么放弃欧几里得距离？</h2>
+                    <h2>算法选型中的业务 Trade-off</h2>
                 </div>
-                <p>在构建适应度评估函数（Fitness）时，团队最初考虑使用两点间的直线距离。但我很快否决了这个方案。因为在真实的半导体厂房中，车间之间通常是正交的走廊，并且存在<strong>跨楼层货梯的高昂运输时间与动能消耗</strong>。</p>
+                <p>在构建适应度评估函数（Fitness）时，团队最初考虑使用两点间的直线距离以降低算力开销。但我很快否决了这个方案。因为在真实的半导体厂房中，车间之间通常是正交的走廊，并且存在<strong>跨楼层货梯的高昂运输时间与动能消耗</strong>。</p>
                 
                 <div class="pm-card">
                     <h4>产品决策：引入曼哈顿距离与垂直惩罚系数</h4>
@@ -184,13 +184,13 @@
                 <div class="pm-actions pm-actions-white">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li>结合真实的业务物理阻力，否决了脱离实际的纯数学直线测算。</li>
-                        <li>通过定义“垂直惩罚系数”，让算法在跨楼层分配车间时变得极其谨慎，生成的布局方案完美贴合了工业物流的真实成本结构。</li>
+                        <li><strong>基于真实场景的算法权衡：</strong>结合工业物流的真实物理阻力，否决了脱离实际的纯数学直线测算，确保输出方案具备落地可行性。</li>
+                        <li>通过定义“垂直惩罚系数”，强制引擎在跨楼层分配车间时极其谨慎，生成的布局方案完美贴合了客户对成本控制的核心诉求。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="FAB2.jpg" alt="曼哈顿距离 3D 逻辑" class="content-image">
+                <img src="FAB2.jpg" alt="曼哈顿距离与垂直惩罚逻辑图" class="content-image">
             </div>
         </div>
     </section>
@@ -199,21 +199,21 @@
         <div class="content-block vertical">
             <div class="text-side">
                 <div class="section-header">
-                    <div class="tag">2. 统一空间生成架构</div>
-                    <h2>克服算法的“局部最优陷阱”</h2>
+                    <div class="tag">2. 工具落地与可用性设计</div>
+                    <h2>屏蔽底层复杂度与产品化封装</h2>
                 </div>
-                <p>我将核心引擎定义为 <code>约束输入 -> 空间离散化 (Voxel) -> 评估循环 -> 布局生成</code> 的标准流线。为了防止遗传算法在几十代之后卡在“还不错但非最佳”的方案里，我在产品逻辑中加入了强制性的干预机制。</p>
+                <p>最强大的算法如果只有开发人员会用，就无法产生商业价值。为了解决这个问题，我重点推进了这套算法从“底层脚本”向“高可用 B 端辅助工具”的跨越。</p>
 
                 <div class="pm-actions">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li><strong>防局部最优设计：</strong> 在遗传算法（选择与交叉）中，强制高频引入“变异 (Mutation)”和“随机种子 (Seeds)”，迫使引擎跳出舒适区寻找全局最优解。</li>
-                        <li><strong>产品化封装：</strong> 基于 Python 与参数化工具 (Grasshopper) 完成了底层算法的产品化封装，精简了复杂的输入参数，极大降低了普通设计师的理解门槛。</li>
+                        <li><strong>产品化封装与门槛降维：</strong>基于 Python 与参数化工具完成了底层算法的 UI 封装。隐藏了复杂的遗传算法调参过程，将其简化为“输入地块大小 -> 导入车间表格 -> 一键生成”的极简流线，极大降低了一线设计师的学习成本。</li>
+                        <li><strong>防局部最优的底层干预：</strong>在引擎深层强制引入高频“变异 (Mutation)”机制，防止算法产出同质化方案，确保每次生成都能为设计师提供具备启发性的多模态解。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="FAB3.jpg" alt="统一算法架构图" class="content-image">
+                <img src="FAB3.jpg" alt="统一算法架构与前端封装流线图" class="content-image">
             </div>
         </div>
     </section>
@@ -223,25 +223,25 @@
             <div class="text-side">
                 <div class="section-header">
                     <div class="tag">3. 商业价值落地</div>
-                    <h2>AIGC 补齐汇报交付的“最后一公里”</h2>
+                    <h2>AIGC 赋能销售竞标的“最后一公里”</h2>
                 </div>
-                <p>运筹算法跑出的结果（纯色块图）对底层数据极其精准，但在面向甲方客户汇报时，却往往缺乏视觉冲击力和说服力。为了让产品具备真正的 B 端商业闭环能力，我引入了生成式 AI 工作流。</p>
+                <p>运筹算法跑出的结果（纯色块图）对底层数据极其精准，但在面向甲方客户汇报时，却往往缺乏视觉冲击力。为了让产品具备真正的 B 端商业闭环能力，我引入了生成式 AI 工作流。</p>
 
                 <div class="pm-card">
-                    <h4>产品决策：集成 Stable Diffusion 渲染链路</h4>
-                    <p>提取算法底层生成的粗糙结构线稿，将其作为 <strong>ControlNet Line-art 预处理器</strong>的控制源。配合深度定制的 Prompt 模型，一键完成渲染。</p>
+                    <h4>业务决策：集成 Stable Diffusion 标准化渲染链路</h4>
+                    <p>提取算法底层生成的粗糙结构线稿，将其作为 ControlNet 的控制源。配合深度定制的行业 Prompt 模型，实现无需人工干预的一键秒级渲染。</p>
                 </div>
 
                 <div class="pm-actions pm-actions-white">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li>打通从“抽象算法数据”到“高保真视觉表现”的工作链路。</li>
-                        <li>实现了一键输出包含现代混凝土、玻璃幕墙等材质的建筑效果图，大幅提升了方案在商业竞标阶段的直观说服力与转化率。</li>
+                        <li><strong>打通标准化交付流：</strong>构建“数据计算 -> 结构生成 -> AI 效果图渲染”的全自动链路。</li>
+                        <li><strong>赋能商业转化：</strong>高质量的视觉表现大幅降低了前端销售与甲方客户之间的理解偏差与沟通摩擦，显著提升了方案在商业竞标阶段的说服力与转化率。</li>
                     </ul>
                 </div>
             </div>
             <div class="image-side">
-                <img src="FAB4.jpg" alt="AIGC 渲染对比" class="content-image">
+                <img src="FAB4.jpg" alt="数据色块到AIGC高保真渲染对比图" class="content-image">
             </div>
         </div>
     </section>
