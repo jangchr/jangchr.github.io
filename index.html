@@ -53,14 +53,14 @@
         .nav-indexes a:hover { background: var(--bg-gray); }
 
         /* 首屏 Hero */
-        .hero { padding: 160px 24px 100px; text-align: center; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+        .hero { padding: 160px 24px 80px; text-align: center; max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
         .hero-tag { font-size: 13px; font-weight: 600; color: var(--text-gray); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; }
         .hero h1 { font-size: 52px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 24px; color: #111;}
+        .hero h2 { font-size: 18px; line-height: 1.6; font-weight: 500; color: var(--text-gray); max-width: 720px; margin-bottom: 32px;}
         
-        /* 间距控制 */
-        .hero p { font-size: 20px; color: var(--text-gray); line-height: 1.5; max-width: 680px; margin: 0 auto 120px;}
-        .hero h2 { font-size: 18px; line-height: 1.6; font-weight: 500; color: var(--text-gray); max-width: 720px; margin-bottom: 40px;}
-        
+        /* 纯文本求职意向 */
+        .job-intent { font-size: 14px; color: var(--text-gray); margin-bottom: 48px; font-weight: 500; letter-spacing: 0.02em;}
+
         /* 按钮系统 */
         .btn-group { display: flex; gap: 16px; justify-content: center; margin-bottom: 48px;}
         .btn-primary { background: #111; color: #fff; padding: 14px 28px; border-radius: 98px; text-decoration: none; font-size: 15px; font-weight: 500; transition: transform 0.2s, opacity 0.2s; }
@@ -76,24 +76,16 @@
         .section-full-gray { background-color: var(--bg-gray); border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); padding: 100px 0; }
         .section-full-white { background-color: var(--bg-white); padding: 100px 0; }
 
-        /* 主页项目介绍：内容居中限制宽度 */
         .project-content { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
-        
-        /* 🔥 这里去掉了 max-width: 800px，让文字和图片等宽 🔥 */
         .project-header { text-align: left; margin-bottom: 40px; max-width: 100%; }
-        
         .project-role { font-size: 13px; font-weight: 600; color: var(--link-blue); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em;}
-        
-        /* 标题间距控制 */
         .project-title { font-size: 36px; font-weight: 600; margin-bottom: 18px; color: #111; letter-spacing: -0.01em;}
-        
         .project-desc { font-size: 18px; color: var(--text-dark); margin-bottom: 32px; line-height: 1.6;}
         
         .learn-more { font-size: 16px; color: var(--link-blue); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; transition: opacity 0.2s; }
         .learn-more:hover { opacity: 0.8; text-decoration: underline; }
         .learn-more::after { content: "›"; font-size: 20px; margin-left: 4px; line-height: 1; margin-bottom: 2px;}
 
-        /* 超宽图片占位 */
         .mockup-img { 
             width: 100%; border-radius: 24px; padding: 24px;
             display: flex; justify-content: center; align-items: center;
@@ -105,7 +97,6 @@
         .section-full-gray .mockup-img { background: #ffffff; border: 1px solid var(--border-soft); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .section-full-white .mockup-img { background: var(--bg-gray); box-shadow: inset 0 2px 10px rgba(0,0,0,0.02); border: none; }
 
-        /* 底部三列网格 */
         .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; width: 100%; text-align: left; }
         .grid-item h4 { font-size: 17px; font-weight: 600; margin-bottom: 12px; color: #111;}
         .grid-item p { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 0; }
@@ -141,54 +132,23 @@
 
         footer { background: var(--bg-gray); border-top: 1px solid var(--border-soft); padding: 40px 20px; text-align: center; font-size: 13px; color: var(--text-gray); }
 
-        /* 🔥 移动端专属适配 🔥 */
         @media (max-width: 768px) {
-            .hero h1 { 
-                font-size: clamp(24px, 8.5vw, 38px); 
-                white-space: nowrap; 
-            }
-            
+            .hero h1 { font-size: clamp(24px, 8.5vw, 38px); white-space: nowrap; }
             .hero h2 { font-size: 15px; line-height: 1.5; font-weight: 500; margin-bottom: 8px; }
-            .hero p { font-size: 17px; margin-bottom: 60px; }
+            .job-intent { margin-bottom: 32px; font-size: 13px; }
             .section-full-gray, .section-full-white { padding: 60px 0; }
             .project-title { font-size: 32px; }
             .grid-3 { grid-template-columns: 1fr; gap: 24px; }
-            
-            /* 通用图片容器去边框 */
-            .mockup-img { 
-                aspect-ratio: auto; 
-                min-height: auto; 
-                background: transparent !important;
-                box-shadow: none !important;
-                padding: 0 !important;
-            }
-            .mockup-img img {
-                height: auto !important;
-            }
-
-            /* 🌟 单独针对 aifab 动图裁掉原生黑边 🌟 */
-            #aifab-mockup {
-                aspect-ratio: 21 / 9; /* 强制在手机端也保持宽屏裁剪 */
-                overflow: hidden;
-            }
-            #aifab-mockup img {
-                height: 100% !important; /* 填满裁剪框 */
-                object-fit: cover !important;
-            }
-
+            .mockup-img { aspect-ratio: auto; min-height: auto; background: transparent !important; box-shadow: none !important; padding: 0 !important; }
+            #aifab-mockup { aspect-ratio: 21 / 9; overflow: hidden; }
+            #aifab-mockup img { height: 100% !important; object-fit: cover !important; }
             .resume-card { flex-direction: column; text-align: center; gap: 24px; padding: 40px 24px;}
             .btn-group { flex-direction: column; width: 100%; max-width: 300px;}
             .btn-primary, .btn-secondary { width: 100%; text-align: center;}
             .resume-item-header { flex-direction: column; gap: 4px; }
             .awards-grid { grid-template-columns: 1fr; }
-
-            .contact-info { 
-                flex-direction: column; 
-                gap: 12px; 
-            }
-            .contact-info span::after { 
-                display: none; 
-            }
+            .contact-info { flex-direction: column; gap: 12px; }
+            .contact-info span::after { display: none; }
         }
     </style>
 </head>
@@ -208,15 +168,19 @@
         <div class="hero-tag">AI Product Manager Intern</div>
         <h1>设计出身，算法加持。</h1>
         <h2>我是张驰，天津大学建筑学院数字化所本硕<br>兼具工程拆解能力与商业直觉，擅长在资源约束下完成 0-1 商业闭环</h2>
-        <h2><br></h2>
+        
+        <div class="job-intent">
+            求职意向：产品经理实习 | 坐标：北京/上海 | 到岗：2026年6月  | 时长：6个月以上
+        </div>
+
         <div class="btn-group">
             <a href="#projects" class="btn-primary">浏览核心项目</a>
             <a href="#resume" class="btn-secondary">查看在线简历</a>
         </div>
 
         <div class="contact-info">
-            <span>TEL:15843722198</span>
-            <span>Email:15843722198@163.com</span>
+            <span>TEL: 15843722198</span>
+            <span>Email: 15843722198@163.com</span>
             <span>WeChat: Jang_Chr</span>
         </div>
     </section>
@@ -225,27 +189,27 @@
         <div class="project-content">
             <div class="project-header reveal">
                 <div class="project-role">0-1 产品落地与业务容错兜底 / 2026.03</div>
-                <h2 class="project-title">SnapCal</h2>
+                <h2 class="project-title">SnapCal 知食分子</h2>
                 <p class="project-desc">一款基于视觉大模型 (VLM) 的智能饮食管家。通过平衡大模型算力成本与用户体验，将繁琐的记账流线缩短至一键拍照，致力于大幅降低用户的健康管理执行阻力。</p>
                 <a href="snapcal.html" class="learn-more">阅读完整商业复盘与架构逻辑</a>
             </div>
 
             <div class="mockup-img reveal" style="transition-delay: 0.1s; padding: 0; border: none;">
-                <img src="snapcal main.jpg" alt="SnapCal 主图" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
+                <img src="snapcal main.jpg" alt="SnapCal 知食分子" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
             </div>
 
             <div class="grid-3 reveal" style="transition-delay: 0.2s;">
                 <div class="grid-item">
                     <h4>构建模型容错兜底机制</h4>
-                    <p>直面 VLM 输出的不确定性，设计“正则清洗-暴力提取-人在回路”四级降级方案，确保 API 波动时核心记账流线依然 100% 畅通落地。</p>
+                    <p>直面 VLM 输出的不确定性，设计“正则清洗-暴力提取-人在回路”四级降级方案，确保核心记账流线 100% 畅通。</p>
                 </div>
                 <div class="grid-item">
                     <h4>阶梯化商业变现策略</h4>
-                    <p>抛弃单一收费模式，以极简 AI 识别作为高频流量入口，并在产品路径中引导至定制化营养师报告与电商推荐，搭建完整的 SaaS 变现漏斗。</p>
+                    <p>以极简 AI 识别作为高频流量入口，引导至定制化营养师报告与电商推荐，搭建完整的 SaaS 变现漏斗。</p>
                 </div>
                 <div class="grid-item">
                     <h4>高频场景的体验降本</h4>
-                    <p>巨型按钮强干预录入流线。剥离喝水、加餐等高频标准化动作，采用前端本地纯代码直录，规避不必要的云端 VLM 调用，实现体验与 API 成本的双赢。</p>
+                    <p>剥离喝水、加餐等高频标准化动作，采用前端本地直录规避不必要的云端调用，实现体验与 API 成本的双赢。</p>
                 </div>
             </div>
         </div>
@@ -267,15 +231,15 @@
             <div class="grid-3 reveal" style="transition-delay: 0.2s;">
                 <div class="grid-item">
                     <h4>确立业务北极星指标</h4>
-                    <p>深度调研一线设计师的痛点，将模糊的建厂需求结构化抽象，确立了“全生命周期运营流线成本最低”的产品终极优化目标。</p>
+                    <p>深度调研设计师痛点，将模糊需求结构化抽象，确立了“全生命周期运营流线成本最低”的产品优化目标。</p>
                 </div>
                 <div class="grid-item">
                     <h4>算法选型的商业 Trade-off</h4>
-                    <p>为追求真实落地可行性，果断放弃低算力的纯直线测算，引入贴合工业物流阻力的曼哈顿距离与跨楼层垂直惩罚系数。</p>
+                    <p>引入贴合工业物流阻力的曼哈顿距离与垂直惩罚系数，否决脱离实际的纯数学直线测算，确保方案真实可落地。</p>
                 </div>
                 <div class="grid-item">
                     <h4>AIGC 赋能前端商业竞标</h4>
-                    <p>打通从抽象纯色块数据到 Stable Diffusion 高保真渲染的完整流水线，大幅降低前期销售与甲方的沟通摩擦，直接赋能方案转化。</p>
+                    <p>打通从抽象数据到 Stable Diffusion 高保真渲染的流水线，大幅降低前期销售与甲方的沟通摩擦。</p>
                 </div>
             </div>
         </div>
@@ -286,7 +250,7 @@
             <div class="project-header reveal">
                 <div class="project-role">0-1 商业闭环与极低成本资源统筹 / 2026.04</div>
                 <h2 class="project-title">AutoDCA 智能量化定投系统</h2>
-                <p class="project-desc">一款为消除散户“盯盘内耗”而生的财务基建产品。在零预算约束下，主导架构了基于 n8n 与智谱大模型的 Serverless 流水线，跑通跨平台融合到企业级播报的完整逻辑。</p>
+                <p class="project-desc">一款为消除散户“盯盘内耗”而生的财务基建产品。在零预算约束下，主导架构了基于 n8n 与智谱大模型的 Serverless 流水线。</p>
                 <a href="autodca.html" class="learn-more">探索大模型降级清洗与零成本架构</a>
             </div>
 
@@ -297,15 +261,15 @@
             <div class="grid-3 reveal" style="transition-delay: 0.2s;">
                 <div class="grid-item">
                     <h4>情绪价值洞察与 AI 降维</h4>
-                    <p>敏锐捕捉平台滞后引发的“盲盒焦虑”。通过跨平台聚合独立数据权，并接入大模型 (GLM) 将枯燥的异构 K 线清洗、翻译为极简投资摘要。</p>
+                    <p>敏锐捕捉平台滞后引发的“盲盒焦虑”，接入大模型将枯燥的 K 线清洗、翻译为极简投资摘要。</p>
                 </div>
                 <div class="grid-item">
                     <h4>企业级容错流与体验解绑</h4>
-                    <p>手写降级策略应对 API 高频波动。在产品策略上通过强制锚定最新大盘点位，打破基金公司的结算滞后，提前 24 小时向用户反馈真实账户盈亏。</p>
+                    <p>手写降级策略应对 API 高频波动，通过强制锚定最新大盘点位，提前 24 小时向用户反馈真实账户盈亏。</p>
                 </div>
                 <div class="grid-item">
                     <h4>零成本统筹与工作流触达</h4>
-                    <p>在严苛预算限制下，统筹 Hugging Face 容器资源攻克跨网代理底层屏障，并打通飞书 (Lark) 机器人节点，实现 T+0 战报的自动化企业级群播报。</p>
+                    <p>统筹 Hugging Face 容器资源攻克跨网代理底层屏障，打通飞书机器人节点，实现 T+0 战报自动化播报。</p>
                 </div>
             </div>
         </div>
@@ -319,6 +283,36 @@
                 <p>内含排版精美的个人介绍与更多细节</p>
             </div>
             <a href="resume.jpg" target="_blank" class="btn-primary">查看图片简历</a>
+        </div>
+
+        <div class="resume-block reveal">
+            <h3>核心项目经历</h3>
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div class="resume-item-title">SnapCal 知食分子 · AI 产品负责人</div>
+                    <div class="resume-item-date">2026.03 - 2026.04</div>
+                </div>
+                <p><strong>项目描述：</strong>主导基于 VLM 视觉大模型的智能饮食管理工具落地，解决传统输入门槛高导致的 80% 弃用率痛点。</p>
+                <p><strong>核心成果：</strong>定义“正则清洗-暴力提取-人在回路”四级容错架构，将模型异常导致的任务中断率降至 0%；设计高频标准化场景本地直录流线，压降云端算力成本约 30%。</p>
+            </div>
+            
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div class="resume-item-title">AI+半导体厂房设计 · 算法产品负责人</div>
+                    <div class="resume-item-date">2025.09 - 2026.01</div>
+                </div>
+                <p><strong>项目描述：</strong>针对半导体厂房设计周期长、物流成本难以量化的痛点，主导运筹优化算法工具的产品化封装。</p>
+                <p><strong>核心成果：</strong>将模糊建筑需求抽象为“全生命周期流线成本”北极星指标；通过引入曼哈顿距离与垂直惩罚系数，使生成方案具备 100% 工业落地性，交付排期从数天压缩至小时级。</p>
+            </div>
+
+            <div class="resume-item">
+                <div class="resume-item-header">
+                    <div class="resume-item-title">AutoDCA 智能量化定投 · 独立产品负责人</div>
+                    <div class="resume-item-date">2026.04 - 至今</div>
+                </div>
+                <p><strong>项目描述：</strong>针对散户投资中的情绪干扰与平台数据滞后痛点，主导架构脱机全量化定投系统。</p>
+                <p><strong>核心成果：</strong>基于 n8n 与 GLM 大模型构建 Serverless 自动化流水线，实现行情智能清洗与战报实时生成；攻克跨网代理网络屏障，实现零预算下 T+0 企业级工作流自动化播报。</p>
+            </div>
         </div>
 
         <div class="resume-block reveal">
@@ -358,10 +352,10 @@
 
         <div class="resume-block reveal">
             <h3>技能与工具栈</h3>
-            <div class="resume-item" style="line-height: 2;">
+            <div class="resume-item" style="line-height: 2.2;">
                 <p><strong>产品与设计：</strong> Axure, Figma, Xmind, Photoshop</p>
-                <p><strong>数据与开发：</strong> Python, SQL, 小程序全栈开发, Excel</p>
-                <p><strong>AI 效率工具：</strong> Stable Diffusion, Midjourney, Prompt Engineering</p>
+                <p><strong>数据与开发：</strong> Python (数据分析/爬虫), SQL, n8n (Serverless 自动化), 小程序全栈开发, Excel</p>
+                <p><strong>AI 效率工具：</strong> Stable Diffusion, Midjourney, Prompt Engineering, VLM (视觉大模型) 业务封装</p>
             </div>
         </div>
 
@@ -388,18 +382,11 @@
     </footer>
 
     <script>
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
         window.scrollTo(0, 0);
 
         document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -409,10 +396,7 @@
                 });
             }, observerOptions);
 
-            const revealElements = document.querySelectorAll('.reveal');
-            revealElements.forEach(el => {
-                observer.observe(el);
-            });
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
     </script>
 </body>
