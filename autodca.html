@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoDCA 自动化定投系统 - 独立全栈产品 | 张驰</title>
+    <title>AutoDCA 自动化定投系统 - 商业闭环落地 | 张驰</title>
     <style>
         /* Apple-inspired Soft & Clean Design System */
         :root {
@@ -122,21 +122,21 @@
 
     <header class="hero reveal">
         <h1>AutoDCA 全自动量化定投系统</h1>
-        <p>针对传统金融软件“持仓成本失真”与“情绪干扰”的痛点，我利用 n8n 独立架构了一套脱机的全量化定投流水线。实现了从跨国数据抓取、大模型清洗、动态算法核算、到多端战报推送的完整商业逻辑闭环。</p>
+        <p>针对传统金融软件“持仓成本失真”与“情绪干扰”的痛点，主导架构了这套脱机的全量化定投产品。实现了从跨源数据融合、大模型降级清洗、动态算法核算、到极简战报推送的完整商业逻辑闭环。</p>
     </header>
 
     <div class="meta-grid reveal">
         <div class="meta-item">
             <div class="label">项目职责</div>
-            <div class="value">0-1 产品定义 / 全栈开发 / 算法优化</div>
+            <div class="value">0-1 产品定义 / 需求洞察 / 资源统筹落地</div>
         </div>
         <div class="meta-item">
-            <div class="label">核心技术选型</div>
-            <div class="value">n8n / 智谱 AI / Supabase (PostgreSQL) / Hugging Face</div>
+            <div class="label">核心架构选型</div>
+            <div class="value">n8n / 智谱 AI / Supabase / Serverless</div>
         </div>
         <div class="meta-item">
             <div class="label">当前状态</div>
-            <div class="value">Serverless 容器化部署，零成本 24h 高可用</div>
+            <div class="value">零成本高可用容器化部署，T+0 级战报实时触达</div>
         </div>
     </div>
 
@@ -154,7 +154,7 @@
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
                         <li><strong>跨源数据融合与 AI 赋能：</strong>打通新浪财经与天天基金 API，并通过接入<strong>智谱 AI 大模型 (GLM) </strong>进行行情数据的智能清洗与摘要生成。</li>
-                        <li><strong>双轨数据存储：</strong>采用飞书多维表格做前端展示与轻量回溯，底层核心配置接入 Supabase 云端数据库，实现数据的高效流转。</li>
+                        <li><strong>双轨数据存储策略：</strong>采用飞书多维表格做前端展示与轻量回溯，底层核心配置接入 Supabase 云端数据库，实现数据的高效、合规流转。</li>
                     </ul>
                 </div>
             </div>
@@ -176,9 +176,9 @@
                 <div class="pm-actions pm-actions-white">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li><strong>数据降级与清洗：</strong>梳理外部 API 异常边界，手写万能解析函数，处理 Null/Array/String 混合态，抹平异构数据的结构差异。</li>
-                        <li><strong>AI 节点工程化：</strong>将大模型 Prompt 结构化，约束 AI 输出标准 JSON 格式，确保上下游节点的 100% 畅通。</li>
-                        <li>重构 n8n 调度时间轴，精准匹配中美时差，实现“节假日自动休市”以规避周末冗余扣款。</li>
+                        <li><strong>数据降级与清洗规范：</strong>梳理外部 API 异常边界，设计健壮的结构化解析策略，处理 Null/Array/String 混合态，抹平异构数据的结构差异。</li>
+                        <li><strong>AI 节点工程化约束：</strong>将大模型 Prompt 严格结构化，强制 AI 输出标准 JSON 格式。通过工程兜底手段应对大模型幻觉，确保上下游业务节点的 100% 畅通。</li>
+                        <li>重构调度引擎时间轴，精准匹配中美时差，实现“节假日自动休市”策略，有效规避周末冗余执行带来的算力浪费。</li>
                     </ul>
                 </div>
             </div>
@@ -195,14 +195,13 @@
                     <div class="tag">2. 核心算法与时序校准</div>
                     <h2>动态滚动加权与 T+0 数据解绑</h2>
                 </div>
-                <p>为了精准计算出那条能提供情绪价值的“灵魂成本线”，简单的均价逻辑是不够的。我在 Code 节点中实现了基于时间序列的动态份额累加模型，并做了极客级的时序优化。</p>
+                <p>为了精准计算出那条能提供情绪价值的“灵魂成本线”，简单的均价逻辑是不够的。我在 Code 节点中实现了基于时间序列的动态份额累加模型，并做了针对性的产品策略优化。</p>
 
                 <div class="pm-actions">
                     <h4>执行细节 (What I Did)</h4>
                     <ul>
-                        <li><strong>防乱序的时序强制校验：</strong>排查发现飞书 API 返回历史数据时存在偶发乱序，增设 localeCompare 强制时间流排序，确保每一分钱的时序准确性。</li>
-                        <li><strong>成本与大盘的 T+0 解绑：</strong>在容忍极小误差的前提下，产品策略上强制采用当日最新大盘点位锚定上一交易日净值。</li>
-                        <li><strong>情绪价值最大化：</strong>成功打破基金公司的结算滞后，让系统提前 24 小时向用户反馈真实大盘点位。</li>
+                        <li><strong>极低容错率的数据质检：</strong>排查并拦截了飞书 API 历史数据接口的偶发乱序，增设强制时间流校验，保障核心财务数据的绝对严谨。</li>
+                        <li><strong>大盘滞后体验解绑：</strong>在容忍极小误差的前提下，产品策略上强制采用当日最新大盘点位锚定上一交易日净值，提前 24 小时向用户反馈账户盈亏状态。</li>
                     </ul>
                 </div>
             </div>
@@ -216,25 +215,25 @@
         <div class="content-block vertical">
             <div class="text-side">
                 <div class="section-header">
-                    <div class="tag">3. 云端运维与网络攻坚</div>
-                    <h2>Serverless 部署与零成本高可用架构</h2>
+                    <div class="tag">3. 严苛约束下的架构落地</div>
+                    <h2>零成本约束下的高可用可用性权衡</h2>
                 </div>
-                <p>作为一套自动化系统，最终的交付不应该依赖个人电脑的随时开启。我通过云端容器化技术，实现了系统的彻底脱机运行。</p>
+                <p>作为一个个人项目，必须在资源极度受限（零预算）的情况下实现脱机运作。我通过整合开源云服务与底层代理逻辑，以极低成本主导了这套高可用架构的落地。</p>
 
                 <div class="pm-card">
-                    <h4>容器化部署与底层网络攻坚：</h4>
+                    <h4>架构决策与底层攻坚：</h4>
                     <ul>
-                        <li><strong>彻底的脱机架构：</strong>将 n8n 整体环境打包迁移至 Hugging Face Spaces 容器环境，摒弃本地机器依赖。</li>
-                        <li><strong>跨网通信协议桥接：</strong>面对 Hugging Face (纯 IPv4) 与 Supabase 数据库 (IPv6) 的网络协议鸿沟，独立攻克了 Session Pooler (连接池代理) 与 SSL 证书强校验难题，解决 Circuit breaker（断路器）跳闸问题，实现底层数据精准握手。</li>
-                        <li><strong>心跳保活机制：</strong>引入 UptimeRobot 构建 5 分钟级 Ping 监控，对抗免费云容器的强制休眠。</li>
+                        <li><strong>Serverless 选型落地：</strong>将系统整体环境容器化迁移至 Hugging Face Spaces，摒弃本地机器与高昂服务器依赖。</li>
+                        <li><strong>跨网底层通信桥接：</strong>面对 Hugging Face (纯 IPv4) 与 Supabase (IPv6) 的网络协议鸿沟，主导攻克连接池代理与证书强校验等底层网络屏障，确保核心计算与数据节点的精准握手。</li>
+                        <li><strong>可用性兜底保障：</strong>引入 UptimeRobot 构建心跳监控，对抗免费云容器的强制休眠，保障 24h 高可用。</li>
                     </ul>
                 </div>
 
                 <div class="pm-actions pm-actions-white">
-                    <h4>最终触达 (UX Delivery)</h4>
+                    <h4>最终触达与商业价值交付 (UX Delivery)</h4>
                     <ul>
-                        <li>配置 ServerChan 服务打通个人微信节点，完成 T+0 级战报秒级送达。</li>
-                        <li>确立“钝感力”产品调性，每日一条极简推送取代繁杂的金融 App 盯盘焦虑。</li>
+                        <li><strong>企业级工作流触达：</strong>打通飞书 (Lark) 机器人节点，构建专属投资群播报，完成 T+0 级战报的秒级自动化触达。</li>
+                        <li>确立“钝感力”产品调性，以每日一条极简推送取代繁杂的金融 App 盯盘焦虑。</li>
                     </ul>
                 </div>
             </div>
